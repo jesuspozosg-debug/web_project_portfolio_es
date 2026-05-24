@@ -1,0 +1,190 @@
+/* ============ MOBILE 320px - Base ============ */
+.profile {
+  display: flex;
+  flex-direction: column; /* Mobile: foto arriba, texto abajo */
+  align-items: center;
+  text-align: center;
+  gap: 20px; /* Espacio entre imagen y texto */
+}
+
+.profile__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px; /* Imagen cuadrada con esquinas redondas */
+  object-fit: cover; /* Que no se deforme la foto */
+}
+
+.profile__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espacio entre textos */
+  width: 100%;
+}
+
+.profile__name {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--secondary-text); /* Ajusta según tu fondo */
+}
+
+.profile__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-text); /* Gris oscuro para jerarquía */
+}
+
+.profile__techs {
+  font-size: 14px;
+  color: var(--secondary-text); /* Gris medio para techs */
+}
+
+.profile__description {
+  font-size: 14px;
+  line-height: 1.6; /* Mejor lectura */
+  text-align: left; /* Descripción siempre alineada izq */
+  color: var(--secondary-text);
+}
+
+.profile__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Mobile: links uno debajo del otro */
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px; /* Separación de la descripción */
+}
+
+.profile__link {
+  display: inline-block;
+  color: var(--secondary-text);
+  text-decoration: none; /* Sin subrayado feo por default */
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0; /* Sin padding de botón */
+  background-color: transparent; /* Sin fondo */
+  border-radius: 0; /* Sin bordes */
+  position: relative; /* Para el subrayado custom */
+  width: fit-content; /* Solo ocupa el ancho del texto */
+  transition: color 0.3s ease;
+}
+
+/* Subrayado degradado morado que aparece en hover */
+.profile__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* Separación del texto */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Grosor del subrayado */
+  background: linear-gradient(90deg, #8a2be2, #4b0082); /* Degradado morado */
+  transform: scaleX(0); /* Oculto por default */
+  transform-origin: left; /* Animación de izquierda a derecha */
+  transition: transform 0.3s ease;
+}
+
+.profile__link:hover {
+  color: #555555; /* Se aclara el texto en hover */
+}
+
+.profile__link:hover::after {
+  transform: scaleX(1); /* Aparece el subrayado en hover */
+}
+
+/* ============ TABLET 768px ============ */
+@media screen and (min-width: 768px) {
+  .profile {
+    flex-direction: row-reverse; /* Texto izquierda, imagen derecha */
+    align-items: flex-start; /* Alineados arriba */
+    text-align: left;
+    gap: 32px; /* Espacio entre texto e imagen */
+  }
+
+  .profile__image {
+    width: 240px;
+    height: 240px;
+    border-radius: 12px; /* Sigue cuadrada en tablet */
+    flex-shrink: 0; /* Que no se encoja la foto */
+  }
+
+  .profile__content {
+    flex: 1; /* Ocupa todo el espacio restante */
+    gap: 16px; /* Más aire entre textos */
+  }
+
+  .profile__name {
+    font-size: 32px; /* Título más grande */
+  }
+
+  .profile__title {
+    font-size: 18px;
+  }
+
+  .profile__techs {
+    font-size: 16px;
+  }
+
+  .profile__description {
+    font-size: 16px;
+    max-width: 90%; /* Que no se haga muy ancho el párrafo */
+  }
+
+  .profile__links {
+    flex-direction: row; /* Links en fila horizontal */
+    width: auto;
+    gap: 32px; /* Más separación entre links */
+    margin-top: 12px;
+  }
+
+  .profile__link {
+    font-size: 18px; /* Texto más grande en tablet */
+  }
+}
+/* ============ DESKTOP 1280px ============ */
+@media screen and (min-width: 1280px) {
+  .profile {
+    flex-direction: row-reverse; /* Imagen derecha, texto izquierda */
+    align-items: center;
+    gap: 80px; /* Separación entre texto e imagen */
+    padding: 80px 0; /* Espacio arriba y abajo */
+  }
+
+  .profile__image {
+    width: 380px;
+    height: 380px;
+    border-radius: 12px;
+  }
+
+  .profile__content {
+    flex: 1;
+    gap: 20px;
+  }
+
+  .profile__name {
+    font-size: 48px; /* Título grande */
+    line-height: 1.1;
+  }
+
+  .profile__title {
+    font-size: 24px;
+  }
+
+  .profile__techs {
+    font-size: 18px;
+  }
+
+  .profile__description {
+    font-size: 18px;
+    max-width: 600px; /* Limita el ancho del párrafo */
+  }
+
+  .profile__links {
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 16px;
+  }
+
+  .profile__link {
+    font-size: 20px;
+  }
+}

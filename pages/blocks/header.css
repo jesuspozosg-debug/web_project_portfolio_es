@@ -1,0 +1,21 @@
+/* pages/blocks/header.css */
+
+/* ============ MOBILE 320px - Base ============ */
+.header {
+  min-height: 60px; /* Altura mínima aunque esté vacío */
+  width: 100%;
+}
+
+/* ============ TABLET 768px ============ */
+@media screen and (min-width: 768px) {
+  .header {
+    min-height: 80px;
+  }
+}
+
+/* ============ DESKTOP 1280px ============ */
+@media screen and (min-width: 1280px) {
+  .header {
+    min-height: 96px;
+  }
+}

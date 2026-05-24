@@ -1,0 +1,9 @@
+/* pages/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;600;700&display=swap");
+@import url(../vendor/normalize.css);
+@import url(./blocks/page.css);
+@import url(./blocks/header.css);
+@import url(./blocks/profile.css);
+@import url(./blocks/skills.css);
+@import url(./blocks/projects.css);
+@import url(./blocks/footer.css);
